@@ -1,0 +1,39 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: "127.0.0.1"
+      POSTGRES_PORT: "5432"
+    ports:
+      - "8000:8000"
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - dados_db:/var/lib/postgresql
+      - ./db:/docker-entrypoint-initdb.d:ro
+      - ./app:/app/app
+    restart: unless-stopped
+    stop_grace_period: 90s
+    healthcheck:
+      test:
+        - CMD
+        - /opt/venv/bin/python
+        - -c
+        - |
+          import json
+          import sys
+          import urllib.request
+          with urllib.request.urlopen(
+              "http://127.0.0.1:8000/health", timeout=3
+          ) as response:
+              data = json.load(response)
+          sys.exit(0 if data.get("database") == "connected" else 1)
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 60s
+volumes:
+  dados_db:

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* cores do Figma usadas na página do labirinto */
+@theme {
+  --color-card: #0b1626;
+  --color-bloco: #0e1b2d;
+  --color-grade: #1e3a5f;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+
+:root {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* barra do replay: trilho fino escuro e bolinha clara */
+.barra-replay {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.barra-replay:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+.barra-replay::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: #1e293b;
+}
+.barra-replay::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  margin-top: -3px;
+  border-radius: 9999px;
+  background: #e2e8f0;
+}
+.barra-replay::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: #1e293b;
+}
+.barra-replay::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 9999px;
+  background: #e2e8f0;
+}
+
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1D293D;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2A3A52;
+}

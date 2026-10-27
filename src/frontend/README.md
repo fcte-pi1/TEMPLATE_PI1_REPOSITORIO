@@ -1,20 +1,70 @@
-# _Frontend_
+# Frontend — Micromouse
 
-Esta pasta deverá armazenar arquivos referentes a:
+Interface web do projeto Micromouse permite acompanhar a telemetria do robô e visualizar e configurar o labirinto utilizado durante a execução.
 
-- Código-fonte da interface: componentes, páginas, estilos e lógica de apresentação, organizados conforme o framework utilizado ([React](https://react.dev/), [Vue](https://vuejs.org/), [Angular](https://angular.io/) etc.).
-- Arquivos de marcação e estilo estáticos: `index.html`, arquivos `.css`, `.scss` ou `.sass` de estilização global.
-- Arquivos de definição de dependências: `package.json` e `package-lock.json` (ou `yarn.lock`) com todas as bibliotecas utilizadas.
-- Arquivos de configuração do bundler/toolchain: `vite.config.js`, `webpack.config.js`, `tsconfig.json` etc.
-- Arquivos de configuração de ambiente: `.env.example` com as variáveis de ambiente públicas necessárias (ex.: URL base da API).
-- Arquivos de containerização: `Dockerfile` e `docker-compose.yml`, caso a aplicação seja servida via contêiner.
+## Tecnologias
 
-Evite incluir:
+- React 19 
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
 
-- Dependências instaladas: a pasta `node_modules/` deve ser gerada localmente via `npm install` ou equivalente e nunca incluída no repositório.
-- Artefatos de build: diretórios como `dist/`, `build/` ou `.next/` são gerados pelo processo de compilação e não devem ser versionados.
-- Arquivos de configuração pessoal: arquivos como `.directory` (Linux/KDE) ou configurações locais de editor (ex.: `.vscode/settings.json`), salvo configurações compartilhadas como `.editorconfig`.
-- Credenciais e segredos: arquivos `.env` com valores reais nunca devem ser versionados.
+## Requisitos
 
-> [!WARNING]
-> **Não acrescente arquivos referentes ao _backend_ nesta pasta.** Eles deverão ser armazenados na pasta [backend](https://github.com/fcte-pi1/template/tree/main/src/backend) deste repositório.
+- Node.js
+- npm
+
+## Instalação e execução
+
+Na raiz do repositório, entre na pasta da aplicação:
+
+```powershell
+cd .\src\frontend\web-micromouse
+```
+
+Instale as dependências:
+
+```powershell
+npm ci
+```
+
+Inicie o servidor de desenvolvimento:
+
+```powershell
+npm run dev
+```
+
+Abra no navegador o endereço exibido pelo Vite, normalmente **http://localhost:5173**.
+
+## Comandos disponíveis
+
+Execute-os dentro de `src/frontend/web-micromouse`:
+
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento com atualização automática. |
+| `npm run build` | Verifica os tipos TypeScript e gera a versão de produção em `dist/`. |
+| `npm run preview` | Serve localmente a versão gerada em `dist/`. |
+| `npm run lint` | Executa o ESLint. |
+
+## Funcionalidades
+
+- **Dashboard/Telemetria (`/`)**: apresenta bateria, velocidade, RPM dos motores, giroscópio e dados da execução.
+- **Labirinto (`/labirinto`)**: permite selecionar o tamanho do labirinto e visualizar o percurso e os detalhes da execução.
+
+No momento, a telemetria do dashboard é simulada no frontend; a interface ainda não busca esses dados de uma API. Os dados da página de labirinto também ainda não estão conectados ao backend.
+
+## Organização
+
+```text
+web-micromouse/
+├── assets/       # Imagens e ícones
+└── src/
+    ├── components/ # Componentes reutilizáveis da interface
+    ├── hooks/      # Hooks React, incluindo a telemetria simulada
+    ├── pages/      # Páginas da aplicação
+    └── types/      # Tipos TypeScript
+```
+
+Para instruções de execução usando Docker Compose, consulte o [README da aplicação](./web-micromouse/README.md).

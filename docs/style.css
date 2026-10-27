@@ -1,0 +1,15 @@
+@page {
+  size: A4;
+  margin: 1.5cm;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  word-break: break-word; /* Quebra e-mails longos automaticamente */
+}

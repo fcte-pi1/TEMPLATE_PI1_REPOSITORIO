@@ -1,0 +1,229 @@
+.telemetry-page {
+  min-height: 100vh;
+  padding: 32px;
+  background-color: #f3f4f6;
+}
+
+.telemetry-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+.telemetry-card {
+  background-color: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.telemetry-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.telemetry-main-value {
+  font-size: 34px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.telemetry-unit {
+  margin-left: 6px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+/* CONEXÃO */
+
+.connection-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 18px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+.connected {
+  color: #15803d;
+}
+
+.connected .status-dot {
+  background-color: #22c55e;
+}
+
+.disconnected {
+  color: #b91c1c;
+}
+
+.disconnected .status-dot {
+  background-color: #ef4444;
+}
+
+/* BATERIA */
+
+.battery-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.battery-bar {
+  width: 100%;
+  height: 8px;
+
+  margin: 14px 0 18px;
+
+  overflow: hidden;
+
+  background-color: #e5e7eb;
+
+  border-radius: 999px;
+}
+
+.battery-progress {
+  height: 100%;
+
+  background-color: #22c55e;
+
+  border-radius: 999px;
+
+  transition: width 0.3s ease;
+}
+
+.telemetry-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.telemetry-details div {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  color: #6b7280;
+}
+
+.telemetry-details strong {
+  color: #111827;
+}
+
+/* VELOCIDADE */
+
+.speed-value {
+  display: flex;
+
+  align-items: baseline;
+}
+
+/* MOTORES */
+
+.motor-values {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.motor-values div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 14px;
+
+  background-color: #f9fafb;
+
+  border-radius: 8px;
+}
+
+.motor-values span {
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.motor-values strong {
+  color: #111827;
+
+  font-size: 24px;
+}
+
+.motor-values small {
+  color: #9ca3af;
+}
+
+/* GIROSCÓPIO */
+
+/* GIROSCÓPIO */
+
+.gyro-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.gyro-values div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 0;
+  padding: 12px 8px;
+
+  background-color: #f9fafb;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+.gyro-values span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.gyro-values strong {
+  color: #111827;
+  font-size: 18px;
+
+  white-space: nowrap;
+}

@@ -7,6 +7,6 @@ A EAP representa a decomposição hierárquica do escopo total do trabalho a ser
 - A EAP não deve conter atividades.
 - Inserir a imagem da representação da EAP.
 
-A figura abaixo ilustra uma EAP genérica de um sistema de aeronaves:
+Na imagem abaixo, temos a imagem do EAP do nosso projeto (Xaropinho). Nela, o produto foi dividido em: **Software**, **Eletrônica**, **Estruturas**, e **Energia**.
 
-![Calendário 2026/2](https://github.com/fcte-pi1/template/blob/main/docs/figs/Exemplo-de-EAP-com-Entregas-Principais-1263x780.png?raw=true)
+![EAP](./figs/EAP.jpeg)
